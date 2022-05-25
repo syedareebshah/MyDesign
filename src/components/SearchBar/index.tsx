@@ -20,7 +20,7 @@ const SearchBar = () => {
                 style={styles.searchViewInput}
             />
             <TouchableOpacity >
-                <Icon name="search" size={20} style={styles.searchViewChildren} />
+                <Icon name="search" size={25} style={styles.searchViewChildren} />
             </TouchableOpacity>
         </View>
 

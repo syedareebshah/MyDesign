@@ -9,18 +9,9 @@ export const useStyles = () => {
     const styles = StyleSheet.create({
         
         searchViewChildren: {
-            margin: 2,
-            marginLeft: 5,
+            marginRight: 15,
         },
-        searchViewShimmer: {
-            marginBottom: 20,
-            flexDirection: 'row',
-            borderRadius: 30,
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            height: hp('5%'),
-            backgroundColor: '#E7E5E7',
-        },
+        
         searchView: {
             marginTop: 5,
             marginBottom: 20,

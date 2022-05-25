@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import booksJson from '../../dummy.json'
 import {
     ScrollView,
     StyleSheet,
@@ -13,26 +14,23 @@ import { useStyles } from './styles';
 
 
 const BookCard = () => {
+    const [books, setBooks] = useState<any>(booksJson)
+
     const styles = useStyles()
     return (
 
         <ScrollView horizontal={true}>
-            <View style={styles.bookCard}>
-                <Image style={styles.bookStyle} source={require('../../assets/bookCover.jpeg')} />
-                <Text style={styles.bookName}>Becoming</Text>
-                <Text>Michelle Obama</Text>
-            </View>
-            <View style={styles.bookCard}>
-                <Image style={styles.bookStyle} source={require('../../assets/bookCover.jpeg')} />
+            {books.map((obj: any, i: number) => {
+                console.log(obj.img, "...");
 
-                <Text style={styles.bookName}>Becoming</Text>
-                <Text>Michelle Obama</Text>
-            </View>
-            <View style={styles.bookCard}>
-                <Image style={styles.bookStyle} source={require('../../assets/bookCover.jpeg')} />
-                <Text style={styles.bookName}>Becoming</Text>
-                <Text>Michelle Obama</Text>
-            </View>
+                return (
+                    <View key={i} style={styles.bookCard}>
+                        <Image style={styles.bookStyle} source={{uri:`${obj.img}`}} />
+                        <Text style={styles.bookName}>{obj.title}</Text>
+                        <Text>{obj.author}</Text>
+                    </View>
+                )
+            })}
         </ScrollView>
 
 

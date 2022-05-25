@@ -38,6 +38,8 @@ const Menu = () => {
                <View style={styles.listItems}>
                    <Text>LOGOUT</Text>
                </View>
+               <View style={styles.horizontalLine}></View>
+
 
            </View>
        </ScrollView>

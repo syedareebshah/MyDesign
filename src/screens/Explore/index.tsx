@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {useNavigation} from '@react-navigation/native';
 import { useStyles } from './styles'
+
 import {
     ScrollView,
     StyleSheet,
@@ -13,14 +14,20 @@ import {
 import Icon from 'react-native-vector-icons/FontAwesome'
 import BookCard from '../../components/BookCard';
 import {BottomTabNavigationProp} from '@react-navigation/bottom-tabs';
+import { DrawerActionType } from '@react-navigation/native';
 import {MainBottomTabParamList} from '../../navigation/MainBottomTabParams'
 import SearchBar from '../../components/SearchBar';
+import type { CompositeScreenProps } from '@react-navigation/native';
+
+
 type ExploreScreenProp = BottomTabNavigationProp<MainBottomTabParamList, 'Explore'>;
 
 const Explore = () => {
+
     const styles = useStyles()
 
     const navigation = useNavigation<ExploreScreenProp>();
+    
 
     return (
         <ScrollView>

@@ -8,8 +8,9 @@ export const useStyles = () => {
     
     const styles = StyleSheet.create({
         bookCard:{
-            marginLeft:30,
-            paddingBottom:10
+            paddingLeft:30,
+            paddingBottom:10,
+            paddingRight:5
         },
         bookName:{
             color:'black',
