@@ -1,3 +1,5 @@
+import 'react-native-gesture-handler';
+import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
 import {
@@ -6,28 +8,16 @@ import {
   View,
 } from 'react-native';
 import BottomTab from './src/components/BottomTab';
-import SearchBar from './src/components/SearchBar';
-import DrawerNavigation from './src/navigation/drawerNavigation';
 import Navigation from './src/navigation/tabBarNavigation';
-import BookDetails from './src/screens/BookDetails';
-import Explore from './src/screens/Explore';
-import MyFav from './src/screens/Fav';
-import Forgot from './src/screens/Forgot';
-import Login from './src/screens/Login';
-import Sinup from './src/screens/Sinup';
-
-
+import DrawerNavigation from './src/navigation/drawerNavigation';
 
 const App = () => {
 
-
   return (
-    <DrawerNavigation />
+    <NavigationContainer>
+      <DrawerNavigation />
+    </NavigationContainer>
   );
 };
-
-const styles = StyleSheet.create({
-
-});
 
 export default App;

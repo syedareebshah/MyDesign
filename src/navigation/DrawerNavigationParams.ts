@@ -1,4 +1,4 @@
-export type MainBottomTabParamList = {
+export type DrawerNavigationParams = {
     Explore: undefined;
     MyFav: undefined;
     Menu: undefined;

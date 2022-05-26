@@ -17,7 +17,6 @@ const Tab = createBottomTabNavigator<MainBottomTabParamList>();
 const Navigation = () => {
     
     return (
-        <NavigationContainer >
             <Tab.Navigator
                 screenOptions={{
                     tabBarStyle: {
@@ -75,7 +74,6 @@ const Navigation = () => {
                     }}
                 />
             </Tab.Navigator>
-        </NavigationContainer >
     )
 }
 

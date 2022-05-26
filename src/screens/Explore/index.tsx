@@ -20,6 +20,7 @@ import SearchBar from '../../components/SearchBar';
 import type { CompositeScreenProps } from '@react-navigation/native';
 
 
+
 type ExploreScreenProp = BottomTabNavigationProp<MainBottomTabParamList, 'Explore'>;
 
 const Explore = () => {

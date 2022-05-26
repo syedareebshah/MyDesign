@@ -1,19 +1,41 @@
 import * as React from 'react';
+import { Button, View, Text } from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 import Explore from '../screens/Explore';
-import { MainBottomTabParamList } from './MainBottomTabParams';
+import MyFav from '../screens/Fav';
+import { DrawerNavigationParams } from './DrawerNavigationParams'
+import IconExplore from 'react-native-vector-icons/FontAwesome'
+import IconMaterialIcons from 'react-native-vector-icons/MaterialIcons'
+import IconEntypo from 'react-native-vector-icons/Entypo'
 
 
 
-const Drawer = createDrawerNavigator<MainBottomTabParamList>();
+const Drawer = createDrawerNavigator();
 
-export default function DrawerNavigation() {
-    return (
-        <NavigationContainer>
-            <Drawer.Navigator initialRouteName='Explore' >
-                <Drawer.Screen name="Explore" component={Explore} />
-            </Drawer.Navigator>
-        </NavigationContainer>
-    );
+const DrawerNavigation = () => {
+  return (
+    <Drawer.Navigator initialRouteName="Explore">
+      <Drawer.Screen name="Explore" component={Explore} options={{
+        drawerIcon: (({ color, size }) => {
+          return (
+            <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+              <IconExplore name="search" color={color} size={size} />
+            </View>
+          )
+        })
+      }} />
+      <Drawer.Screen name="MyFav" component={MyFav} options={{
+        drawerIcon: (({ color, size }) => {
+          return (
+            <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+              <IconMaterialIcons name="favorite-border" color={color} size={size} />
+            </View>
+          )
+        })
+      }} />
+    </Drawer.Navigator>
+  );
 }
+
+export default DrawerNavigation
