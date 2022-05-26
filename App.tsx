@@ -10,13 +10,17 @@ import {
 import BottomTab from './src/components/BottomTab';
 import Navigation from './src/navigation/tabBarNavigation';
 import DrawerNavigation from './src/navigation/drawerNavigation';
+import { store } from './src/redux/store/store'
+import { Provider } from 'react-redux'
 
 const App = () => {
 
   return (
+    <Provider store={store}>
     <NavigationContainer>
       <DrawerNavigation />
     </NavigationContainer>
+    </Provider>
   );
 };
 

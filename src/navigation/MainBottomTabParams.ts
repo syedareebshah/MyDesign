@@ -1,5 +1,5 @@
 export type MainBottomTabParamList = {
-    Explore: undefined;
-    MyFav: undefined;
-    Menu: undefined;
+    ExploreScreen: undefined;
+    MyFavScreen: undefined;
+    MenuScreen: undefined;
 };

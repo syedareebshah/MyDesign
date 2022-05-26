@@ -8,6 +8,7 @@ import { DrawerNavigationParams } from './DrawerNavigationParams'
 import IconExplore from 'react-native-vector-icons/FontAwesome'
 import IconMaterialIcons from 'react-native-vector-icons/MaterialIcons'
 import IconEntypo from 'react-native-vector-icons/Entypo'
+import Navigation from './tabBarNavigation';
 
 
 
@@ -15,8 +16,8 @@ const Drawer = createDrawerNavigator();
 
 const DrawerNavigation = () => {
   return (
-    <Drawer.Navigator initialRouteName="Explore">
-      <Drawer.Screen name="Explore" component={Explore} options={{
+    <Drawer.Navigator>
+      <Drawer.Screen name="Explore" component={Navigation} options={{
         drawerIcon: (({ color, size }) => {
           return (
             <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
@@ -25,6 +26,7 @@ const DrawerNavigation = () => {
           )
         })
       }} />
+
       <Drawer.Screen name="MyFav" component={MyFav} options={{
         drawerIcon: (({ color, size }) => {
           return (
@@ -34,6 +36,7 @@ const DrawerNavigation = () => {
           )
         })
       }} />
+
     </Drawer.Navigator>
   );
 }

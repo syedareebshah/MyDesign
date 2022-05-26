@@ -18,16 +18,18 @@ import { DrawerActionType } from '@react-navigation/native';
 import {MainBottomTabParamList} from '../../navigation/MainBottomTabParams'
 import SearchBar from '../../components/SearchBar';
 import type { CompositeScreenProps } from '@react-navigation/native';
+import { useDispatch, useSelector } from 'react-redux';
 
-
-
-type ExploreScreenProp = BottomTabNavigationProp<MainBottomTabParamList, 'Explore'>;
+type ExploreScreenProp = BottomTabNavigationProp<MainBottomTabParamList, 'ExploreScreen'>;
 
 const Explore = () => {
 
     const styles = useStyles()
 
     const navigation = useNavigation<ExploreScreenProp>();
+
+    const theme = useSelector((state)=>{console.log(state);
+    })
     
 
     return (
