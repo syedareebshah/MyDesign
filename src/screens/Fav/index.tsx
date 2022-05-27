@@ -9,10 +9,7 @@ import {
     TouchableOpacity,
     Image
 } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome'
-import BookCard from '../../components/BookCard';
 import SearchBar from '../../components/SearchBar';
-import DrawerNavigation from '../../navigation/drawerNavigation';
 
 
 const MyFav = () => {
@@ -28,33 +25,33 @@ const MyFav = () => {
                     <View style={styles.booksContainer}>
                         <Image style={styles.books} source={require('../../assets/bookCover.jpeg')} />
                         <Text style={styles.regularText}>Any Name</Text>
-                        <Text>Author</Text>
+                        <Text style={styles.regularText}>Author</Text>
                     </View>
                     <View style={styles.booksContainer}>
                         <Image style={styles.books} source={require('../../assets/bookCover.jpeg')} />
                         <Text style={styles.regularText}>Any Name</Text>
-                        <Text>Author</Text>
+                        <Text style={styles.regularText}>Author</Text>
                     </View>
                     <View style={styles.booksContainer}>
                         <Image style={styles.books} source={require('../../assets/bookCover.jpeg')} />
                         <Text style={styles.regularText}>Any Name</Text>
-                        <Text>Author</Text>
+                        <Text style={styles.regularText}>Author</Text>
                     </View><View style={styles.booksContainer}>
                         <Image style={styles.books} source={require('../../assets/bookCover.jpeg')} />
                         <Text style={styles.regularText}>Any Name</Text>
-                        <Text>Author</Text>
+                        <Text style={styles.regularText}>Author</Text>
                     </View><View style={styles.booksContainer}>
                         <Image style={styles.books} source={require('../../assets/bookCover.jpeg')} />
                         <Text style={styles.regularText}>Any Name</Text>
-                        <Text>Author</Text>
+                        <Text style={styles.regularText}>Author</Text>
                     </View><View style={styles.booksContainer}>
                         <Image style={styles.books} source={require('../../assets/bookCover.jpeg')} />
                         <Text style={styles.regularText}>Any Name</Text>
-                        <Text>Author</Text>
+                        <Text style={styles.regularText}>Author</Text>
                     </View>
                 </View>
 
-                <Text style={{ textAlign: 'center', padding: 50 }}>You reached to the end</Text>
+                <Text style={[{ textAlign: 'center', padding: 50 },styles.regularText]}>You reached to the end</Text>
             </View>
         </ScrollView>
     );

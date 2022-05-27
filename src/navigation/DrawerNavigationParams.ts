@@ -1,6 +1,11 @@
 export type DrawerNavigationParams = {
-    DrawerNavigation: undefined
     Explore: undefined;
     MyFav: undefined;
     Menu: undefined;
+    Login: undefined;
+    Sinup: undefined
+    Forgot: undefined;
+    DrawerNavigation: undefined;
+    BookDetails:undefined;
+    BookCard:undefined;
 };

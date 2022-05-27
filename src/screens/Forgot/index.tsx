@@ -1,16 +1,11 @@
 import React from 'react';
 import { useStyles } from './styles'
 import {
-    ScrollView,
-    StyleSheet,
     Text,
     TextInput,
     View,
     TouchableOpacity,
-    Image
 } from 'react-native';
-import Icon from 'react-native-vector-icons/AntDesign'
-import BookCard from '../../components/BookCard';
 
 
 const Forgot = () => {

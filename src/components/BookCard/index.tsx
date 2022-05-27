@@ -2,32 +2,40 @@ import React, { useState } from 'react';
 import booksJson from '../../dummy.json'
 import {
     ScrollView,
-    StyleSheet,
     Text,
-    TextInput,
     View,
-    TouchableOpacity,
-    Image
+    Image,
+    TouchableOpacity
 } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome'
 import { useStyles } from './styles';
+
+import {NativeStackNavigationProp} from '@react-navigation/native-stack'
+import {DrawerNavigationParams} from '../../navigation/DrawerNavigationParams'
+import { useNavigation } from '@react-navigation/native';
+
+type BookCard = NativeStackNavigationProp<DrawerNavigationParams, 'BookCard'>;
+
+
 
 
 const BookCard = () => {
     const [books, setBooks] = useState<any>(booksJson)
+
+    const navigation = useNavigation<BookCard>()
 
     const styles = useStyles()
     return (
 
         <ScrollView horizontal={true}>
             {books.map((obj: any, i: number) => {
-                console.log(obj.img, "...");
 
                 return (
                     <View key={i} style={styles.bookCard}>
+                        <TouchableOpacity onPress={()=>{navigation.navigate('BookDetails')}}>
                         <Image style={styles.bookStyle} source={{uri:`${obj.img}`}} />
                         <Text style={styles.bookName}>{obj.title}</Text>
-                        <Text>{obj.author}</Text>
+                        <Text style={styles.bookName}>{obj.author}</Text>
+                        </TouchableOpacity>
                     </View>
                 )
             })}

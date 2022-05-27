@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { useTheme } from 'react-native-paper';
 import {
     heightPercentageToDP as hp,
     widthPercentageToDP as wp,
@@ -6,16 +7,17 @@ import {
 // import { getPercentageWidth, getPercentageHeight } from 'utils/dimentionUtil';
 
 export const useStyles = () => {
-    const styles = StyleSheet.create({
+    const {colors} = useTheme()
+     const styles = StyleSheet.create({
         container: {
-            backgroundColor: '#FFFFFF',
+            backgroundColor: colors.background,
             paddingBottom:50,
             paddingTop:50,
         },
         heading:{
             fontWeight:'bold',
             fontSize:30,
-            color:'black',
+            color:colors.primary,
             marginBottom:30
         },
         
@@ -24,11 +26,11 @@ export const useStyles = () => {
             marginRight:30,
         },
         regularText:{
-            color:'black',
+            color:colors.primary,
             marginBottom:5
         },
         boldText:{
-            color:'black',
+            color:colors.primary,
             fontWeight:'bold'
         },
         books:{

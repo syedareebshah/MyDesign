@@ -48,7 +48,8 @@ export const useStyles = () => {
             fontWeight:'bold'
         },
         subHeading:{
-            textAlign:'center'
+            textAlign:'center',
+            padding:10
         },
         txtInput:{
             paddingLeft:40,
@@ -65,6 +66,12 @@ export const useStyles = () => {
         sinup:{
             textAlign:'center',
             color:'blue'
+        },
+        forgot:{
+            alignSelf:'flex-end',
+            color:'blue',
+            marginRight:20,
+            marginBottom:15
         }
         
         

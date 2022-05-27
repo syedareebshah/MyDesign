@@ -1,16 +1,12 @@
 import React from 'react';
 import { useStyles } from './styles'
 import {
-    ScrollView,
-    StyleSheet,
     Text,
     TextInput,
     View,
     TouchableOpacity,
     Image
 } from 'react-native';
-import Icon from 'react-native-vector-icons/AntDesign'
-import BookCard from '../../components/BookCard';
 
 
 const Sinup = () => {
@@ -18,7 +14,6 @@ const Sinup = () => {
     return (
         <View>
             <View style={styles.header}>
-
             </View>
             <View style={styles.login}>
                 <Text style={styles.loginHeading}>Sign Up</Text>

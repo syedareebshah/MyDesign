@@ -1,14 +1,13 @@
 import React from 'react';
 import { useStyles } from './styles'
 import {
-    ScrollView,
     StyleSheet,
-    Text,
     TextInput,
     View,
     TouchableOpacity
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+
 
 
 const SearchBar = () => {
@@ -28,8 +27,6 @@ const SearchBar = () => {
     );
 };
 
-const styles = StyleSheet.create({
 
-});
 
 export default SearchBar;

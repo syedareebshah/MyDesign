@@ -17,7 +17,7 @@ export const themeSlice = createSlice({
   initialState,
   reducers: {
     getTheme: (state, action: PayloadAction<any>) => {
-    //   state.theme = action.payload.email
+      state.isDark = action.payload  
     },
     
   },
@@ -26,6 +26,6 @@ export const themeSlice = createSlice({
 export const { getTheme } = themeSlice.actions
 
 // Other code such as selectors can use the imported `RootState` type
-export const selectTheme = (state: RootState) => state
+export const selectTheme = (state: RootState) => state.theme.isDark
 
 export default themeSlice.reducer

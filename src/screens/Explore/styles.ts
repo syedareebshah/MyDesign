@@ -4,19 +4,23 @@ import {
     widthPercentageToDP as wp,
 } from 'react-native-responsive-screen';
 // import { getPercentageWidth, getPercentageHeight } from 'utils/dimentionUtil';
+import { useTheme } from 'react-native-paper';
 
 export const useStyles = () => {
+    
+    const { colors } = useTheme();
+
     const styles = StyleSheet.create({
         container: {
-            backgroundColor: '#FFFFFF',
-            paddingBottom:60,
+            backgroundColor: colors.background,
+            paddingBottom:80,
             paddingTop:50
 
         },
         heading:{
             fontWeight:'bold',
             fontSize:30,
-            color:'black'
+            color: colors.primary
         },
         horizontalLine:{
             height:1,
@@ -30,10 +34,10 @@ export const useStyles = () => {
 
         },
         regularText:{
-            color:'black',
+            color: colors.primary,
         },
         boldText:{
-            color:'black',
+            color: colors.primary,
             fontWeight:'bold'
         },
         seprator:{

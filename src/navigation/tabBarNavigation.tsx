@@ -2,20 +2,20 @@ import React from "react";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Explore from "../screens/Explore";
 import { MainBottomTabParamList } from './MainBottomTabParams';
-import { NavigationContainer } from "@react-navigation/native";
 import MyFav from "../screens/Fav";
-import { View, Text, TouchableOpacity, Image } from 'react-native';
+import { View, Text } from 'react-native';
 import IconExplore from 'react-native-vector-icons/FontAwesome'
 import IconMaterialIcons from 'react-native-vector-icons/MaterialIcons'
 import IconEntypo from 'react-native-vector-icons/Entypo'
 import Menu from "../screens/Menu";
-import DrawerNavigation from "./drawerNavigation";
 
 const Tab = createBottomTabNavigator<MainBottomTabParamList>();
 
-
+import { useTheme } from "react-native-paper";
 
 const Navigation = () => {
+
+    const { colors } = useTheme()
 
     return (
         <Tab.Navigator
@@ -27,10 +27,13 @@ const Navigation = () => {
                     position: 'absolute',
                     borderTopLeftRadius: 30,
                     borderTopRightRadius: 30,
-                    backgroundColor: 'rgba(244, 244, 244, 0.95)',
+                    backgroundColor: colors.tabBackground,
+                    
                 },
-                tabBarActiveTintColor: 'blue',
-                tabBarInactiveTintColor: 'gray',
+                
+                tabBarActiveTintColor: colors.tabIcon,
+                tabBarInactiveTintColor: colors.tabIconInActive,
+
             }}
         >
 
@@ -40,7 +43,7 @@ const Navigation = () => {
                     tabBarShowLabel: false,
                     tabBarIcon: ({ color, size }) => {
                         return (
-                            <View style={{ flexDirection: 'row', backgroundColor: 'white', padding: 10, paddingLeft: 30, paddingRight: 15, borderRadius: 50 }}>
+                            <View style={{ flexDirection: 'row', backgroundColor: colors.bottomBadge, padding: 10, paddingLeft: 30, paddingRight: 15, borderRadius: 50 }}>
                                 <IconExplore name="search" color={color} size={size} />
                                 <Text>Explore</Text>
                             </View>
@@ -55,7 +58,7 @@ const Navigation = () => {
                     tabBarShowLabel: false,
                     tabBarIcon: ({ color, size }) => {
                         return (
-                            <View style={{ flexDirection: 'row', backgroundColor: 'white', padding: 10, paddingLeft: 30, paddingRight: 15, borderRadius: 50 }}>
+                            <View style={{ flexDirection: 'row', backgroundColor: colors.bottomBadge, padding: 10, paddingLeft: 30, paddingRight: 15, borderRadius: 50 }}>
                                 <IconMaterialIcons name="favorite-border" color={color} size={size} />
                                 <Text>Favorite</Text>
                             </View>
@@ -69,7 +72,7 @@ const Navigation = () => {
                     tabBarShowLabel: false,
                     tabBarIcon: ({ color, size }) => {
                         return (
-                            <View style={{ flexDirection: 'row', backgroundColor: 'white', padding: 10, paddingLeft: 30, paddingRight: 15, borderRadius: 50 }}>
+                            <View style={{ flexDirection: 'row', backgroundColor: colors.bottomBadge, padding: 10, paddingLeft: 30, paddingRight: 15, borderRadius: 50 }}>
                                 <IconEntypo name="menu" color={color} size={size} />
                                 <Text>Menu</Text>
                             </View>

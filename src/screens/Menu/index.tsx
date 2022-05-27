@@ -10,37 +10,36 @@ import {
     Image
 } from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign'
-import BookCard from '../../components/BookCard';
 
 
 const Menu = () => {
     const styles = useStyles()
+    
+
     return (
-       <ScrollView style={{backgroundColor:'white',}}>
+       <ScrollView style={styles.main}>
            <View style={styles.container}>
                <Text style={styles.header}>Preference</Text>
                <View style={styles.horizontalLine}></View>
                <View style={styles.listItems}>
-                   <Text>ACCOUNT</Text>
-                   <Icon name='right' />
+                   <Text style={styles.txtAndIcons}>ACCOUNT</Text>
+                   <Icon style={styles.txtAndIcons} name='right' />
                </View>
                <View style={styles.horizontalLine}></View>
                <View style={styles.listItems}>
-                   <Text>SETTING</Text>
-                   <Icon name='right' />
+                   <Text style={styles.txtAndIcons}>SETTING</Text>
+                   <Icon style={styles.txtAndIcons} name='right' />
                </View>
                <View style={styles.horizontalLine}></View>
                <View style={styles.listItems}>
-                   <Text>GENRES PREFERENCE</Text>
-                   <Icon name='right' />
+                   <Text style={styles.txtAndIcons}>GENRES PREFERENCE</Text>
+                   <Icon style={styles.txtAndIcons} name='right' />
                </View>
                <View style={styles.horizontalLine}></View>
                <View style={styles.listItems}>
-                   <Text>LOGOUT</Text>
+                   <Text style={styles.txtAndIcons}>LOGOUT</Text>
                </View>
                <View style={styles.horizontalLine}></View>
-
-
            </View>
        </ScrollView>
             
