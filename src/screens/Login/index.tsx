@@ -16,7 +16,9 @@ import Icon from 'react-native-vector-icons/AntDesign'
 import BookCard from '../../components/BookCard';
 import { DrawerNavigationParams } from '../../navigation/DrawerNavigationParams';
 import { useNavigation } from '@react-navigation/native';
-
+import {useSelector} from 'react-redux';
+import {loginFlag} from '../../redux/features/loginSlice';
+import {useDispatch} from 'react-redux';
 
 type loginScreenProp = NativeStackNavigationProp<DrawerNavigationParams, 'Login'>;
 
@@ -24,6 +26,9 @@ type loginScreenProp = NativeStackNavigationProp<DrawerNavigationParams, 'Login'
 const Login = () => {
     const styles = useStyles()
     const navigation = useNavigation<loginScreenProp>();
+    const dispatch = useDispatch()
+    
+    
 
     const { control, handleSubmit, formState: { errors } } = useForm({
         defaultValues: {
@@ -33,6 +38,7 @@ const Login = () => {
     });
     const onSubmit = (data: any) => {
         if(data.email =='admin@admin.com' && data.password == '1234'){
+            dispatch(loginFlag(true))
             navigation.navigate('DrawerNavigation')
         }
         else{
@@ -54,6 +60,7 @@ const Login = () => {
                     control={control}
                     rules={{
                         required: true,
+                    
                     }}
                     render={({ field: { onChange, onBlur, value } }) => (
                         <TextInput

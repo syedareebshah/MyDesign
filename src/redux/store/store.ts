@@ -1,8 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit'
 import themeSlice from '../features/themeSlice'
+import loginSlice from '../features/loginSlice'
 
 export const store = configureStore({
   reducer: {
+    login: loginSlice,
     theme: themeSlice,
   },
 })
