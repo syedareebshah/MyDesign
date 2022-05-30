@@ -28,9 +28,9 @@ const Navigation = () => {
                     borderTopLeftRadius: 30,
                     borderTopRightRadius: 30,
                     backgroundColor: colors.tabBackground,
-                    
+
                 },
-                
+
                 tabBarActiveTintColor: colors.tabIcon,
                 tabBarInactiveTintColor: colors.tabIconInActive,
 
@@ -54,7 +54,6 @@ const Navigation = () => {
 
             <Tab.Screen name="MyFavScreen" component={MyFav}
                 options={{
-                    tabBarLabel: 'SOME',
                     tabBarShowLabel: false,
                     tabBarIcon: ({ color, size }) => {
                         return (
@@ -67,6 +66,7 @@ const Navigation = () => {
                 }}
 
             />
+
             <Tab.Screen name="MenuScreen" component={Menu}
                 options={{
                     tabBarShowLabel: false,

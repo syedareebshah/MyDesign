@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import { View} from "react-native";
-import { Switch } from "react-native-paper";
+import { Switch, Text } from "react-native-paper";
 import { useSelector, useDispatch } from "react-redux";
 import { getTheme } from "../../redux/features/themeSlice";
 

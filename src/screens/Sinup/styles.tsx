@@ -65,6 +65,12 @@ export const useStyles = () => {
         sinup:{
             textAlign:'center',
             color:'blue'
+        },
+        regulartxt:{
+            textAlign:'center',
+            marginTop:15,
+            color:'blue',
+            textDecorationLine:'underline'
         }
         
         
