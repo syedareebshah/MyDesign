@@ -19,7 +19,7 @@ const Navigation = () => {
 
     return (
         <Tab.Navigator
-
+        
             screenOptions={{
                 headerShown: false,
                 tabBarStyle: {
@@ -30,7 +30,7 @@ const Navigation = () => {
                     backgroundColor: colors.tabBackground,
 
                 },
-
+                
                 tabBarActiveTintColor: colors.tabIcon,
                 tabBarInactiveTintColor: colors.tabIconInActive,
 
@@ -40,8 +40,10 @@ const Navigation = () => {
 
             <Tab.Screen name="ExploreScreen" component={Explore}
                 options={{
+                    
                     tabBarShowLabel: false,
                     tabBarIcon: ({ color, size }) => {
+                        
                         return (
                             <View style={{ flexDirection: 'row', backgroundColor: colors.bottomBadge, padding: 10, paddingLeft: 30, paddingRight: 15, borderRadius: 50 }}>
                                 <IconExplore name="search" color={color} size={size} />

@@ -10,6 +10,7 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
+    "@hookform/resolvers": "^2.8.10",
     "@react-native-community/masked-view": "^0.1.11",
     "@react-navigation/bottom-tabs": "^6.3.1",
     "@react-navigation/drawer": "^6.4.1",
@@ -29,7 +30,8 @@
     "react-native-splash-screen": "^3.3.0",
     "react-native-vector-icons": "^9.1.0",
     "react-navigation": "^4.4.4",
-    "react-redux": "^8.0.2"
+    "react-redux": "^8.0.2",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

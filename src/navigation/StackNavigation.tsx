@@ -14,7 +14,7 @@ import {loginFlag} from '../redux/features/loginSlice'
 const Stack = createNativeStackNavigator();
 
 const StackNavigation = () => {
-    const isSignIn = useSelector(payload=> payload.login.isLoggedIn)
+    const isSignIn = useSelector(payload => payload.login.isLoggedIn)
     
 
     useEffect(() => {

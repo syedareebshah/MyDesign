@@ -12,36 +12,34 @@ import {
 } from 'react-native';
 import { useForm, Controller } from "react-hook-form";
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import Icon from 'react-native-vector-icons/AntDesign'
-import BookCard from '../../components/BookCard';
 import { DrawerNavigationParams } from '../../navigation/DrawerNavigationParams';
 import { useNavigation } from '@react-navigation/native';
-import {useSelector} from 'react-redux';
-import {loginFlag} from '../../redux/features/loginSlice';
-import {useDispatch} from 'react-redux';
+import { loginFlag } from '../../redux/features/loginSlice';
+import { useDispatch } from 'react-redux';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from "yup"
 
 type loginScreenProp = NativeStackNavigationProp<DrawerNavigationParams, 'Login'>;
 
+const schema = yup.object({
+    email: yup.string().email().required(),
+    password: yup.string().required()
+}).required();
 
 const Login = () => {
     const styles = useStyles()
     const navigation = useNavigation<loginScreenProp>();
     const dispatch = useDispatch()
-    
-    
 
     const { control, handleSubmit, formState: { errors } } = useForm({
-        defaultValues: {
-            email: '',
-            password: ''
-        }
+        resolver: yupResolver(schema)
     });
     const onSubmit = (data: any) => {
-        if(data.email =='admin@admin.com' && data.password == '1234'){
+        if (data.email == 'admin@gmail.com' && data.password == '1234') {
             dispatch(loginFlag(true))
             navigation.navigate('DrawerNavigation')
         }
-        else{
+        else {
             Alert.alert("Email/Password Wrong")
         }
     };
@@ -60,7 +58,7 @@ const Login = () => {
                     control={control}
                     rules={{
                         required: true,
-                    
+
                     }}
                     render={({ field: { onChange, onBlur, value } }) => (
                         <TextInput
@@ -92,7 +90,7 @@ const Login = () => {
                     )}
                     name="password"
                 />
-                {errors.password &&  <Text>This is required.</Text>}
+                {errors.password && <Text>This is required.</Text>}
 
                 <TouchableOpacity onPress={() => { navigation.navigate('Forgot') }}>
                     <Text style={styles.forgot}>Forgot Password?</Text>
